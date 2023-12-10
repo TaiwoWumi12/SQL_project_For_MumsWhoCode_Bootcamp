@@ -2,78 +2,80 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 Question 1: How many total listings are there in the Capetown AirBnB data? Would you say there are inactive listings in the data? If yes, What percentage of total listing is active or inactive?
 
-SQL Queries:
+SQL Queries: SELECT SUM(host_total_listings_count)
+FROM listings
 
-Answer:
-
-
+Answer:! 201844 Listings are in the Capetown AirBnB Data.
+-- There are inactive listings in the data.
+SQL Queries: SELECT *
+FROM listing
+WHERE has_availability = 'false'      
+--Yes, 269 listings are not active considering that they are not available.
+If yes,
+SQL Queries: SELECT (COUNT(CASE WHEN has_availability = 'true' THEN 1 end) * 100 / COUNT(*)) as percentage_true
+FROM listings
+--97%  of the listings are active while 3% are inactive.
 
 
 Question 2: How many distinct hosts are present in the CapeTown AirBnB listing? How many listings does each of this distinct hosts have? Which host have the most listings
 
 SQL Queries:
 #How many distinct hosts are present in the CapeTown AirBnB listing? 
-select count (distinct host_id)
-from listings
+SELECT COUNT (distinct host_id)
+FROM listings
 
-Answer:
-5980
+Answer: 5980 Distinct host are present in the CapeTown AirBnB listings.
 
 SQL Queries:
 --How many listings does each of this distinct hosts have? 
-select host_id, count(host_id) as number_of_listing
-from listings
-group by host_id
-order by number_of_listing desc
+SELECT host_id, COUNT(host_id) AS number_of_listing
+FROM listings
+GROUP BY host_id
+ORDER BY number_of_listing DESC
 
 Answer:
 
 SQL Queries
 --How many listings does each of this distinct hosts have? 
-select host_id, count(host_id) as number_of_listing
-from listings
-group by host_id
-order by number_of_listing desc
+SELECT host_id, COUNT(host_id) AS number_of_listing
+FROM listings
+GROUP BY host_id
+ORDER BY number_of_listing DESC
 
 Answer:
 **"host_id"**	    **"number_of_listing"**
 57218252	          115
 
 
-
-
 Question 3: On Availability, What is the total number of listings available for more than 90 days a year? How many listings have availability for less than 30 days a year? What percentage of listings are available for instant booking?
 
-SQL Queries: --On Availability, What is the total number of listings available for more than 90 days a year?
-select count(distinct host_id)
-from listings
-where cast(availability_365 as integer) > 90
+SQL Queries: COUNT (distinct host_id)
+FROM listings
+WHERE CASE (availability_365 as integer) > 90
 
-Answer: 4350
+Answer: 4350 is the total number of listings available for more than 90 days a year.
 
-SQL Queries: --How many listings have availability for less than 30 days a year? 
-select count(distinct host_id)
-from listings
-where cast(availability_365 as integer) < 30
+SQL Queries: -- Listings have availability for less than 30 days a year 
+SELECT COUNT (distinct host_id)
+FROM listings
+WHERE CASE (availability_365 as integer) < 30
 
-Answer:1198
+Answer:1198 Listings has availability for less than 30 days a year.
 
 SQL Queries: --What percentage of listings are available for instant booking?
-select (count(case when instant_bookable = 'true' then 1 end) * 100 / count(*)) as percentage_true
-from listings
+SELECT (COUNT(CASE WHEN instant_bookable = 'true' THEN 1 END) * 100 / COUNT(*)) AS percentage_true
+FROM listings
 
-Answer: 24
-
-
+Answer: 24 Percentage of listings are available for instant booking.
 
 
 Question 4: What are the different types of properties available and their counts? Which property type has the highest average price? Write a query to show the correlation between review and pricing.
 
 SQL Queries: --What percentage of listings are available for instant booking?
-select (count(case when instant_bookable = 'true' then 1 end) * 100 / count(*)) as percentage_true
-from listings
+SELECT (COUNT(CASE WHEN instant_bookable = 'true' THEN 1 END) * 100 / COUNT(*)) AS percentage_true
+FROM listings
 
-Answer:"property_type"	      "count"
+Answer: "property_type"	      "COUNT"
 "Private room in hostel"	      10
 "Room in hotel"	                21
 "Private room in bungalow"	    4
@@ -129,26 +131,23 @@ Answer:"property_type"	      "count"
 "Private room in villa"	10
 
 SQL Queries:
---Which property type has the highest average price? 
-select property_type, sum(cast(replace(replace(price,'$', ''), ',', '') as decimal)) as total_price
-from listings
-group by property_type
-order by total_price desc
-limit 1
+--The property type that has the highest average price
+SELECT property_type, SUM(CASE(REPLACE(REPLACE(price,'$', ''), ',', '') AS DECIMAL)) AS total_price
+FROM listings
+GROUP BY property_type
+ORDER BY total_price DESC
+LIMIT 1
 
 Answer: 
 "property_type"	  "total_price"
 "Entire home"    	10862254.00
 
 SQL Queries: --Write a query to show the correlation between review and pricing.
-select corr(review_score_rating, cast(replace(replace(price,'$', ''), ',', '') as decimal)) as correlation
-from listings
+SELEC CORR(review_score_rating, CASE(REPLACE(REPLACE(price,'$', ''), ',', '') AS DECIMAL)) AS correlation
+FROM listings
 
-Answer: 
-"correlation"
+Answer: "correlation"
 0.03138939778597713
-
-
 
 
 Question 5: How do individual listings or hosts perform compared to the average or top-performing ones in terms of ratings, pricing, and booking frequency?
@@ -156,3 +155,5 @@ Question 5: How do individual listings or hosts perform compared to the average 
 SQL Queries:
 
 Answer:
+
+
