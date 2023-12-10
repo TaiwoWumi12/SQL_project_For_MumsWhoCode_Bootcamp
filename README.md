@@ -21,6 +21,7 @@ To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,and review 
 
  1. The total listings in the Capetown AirBnB data and percentage of total listing that is active and inactive,the total listings in the Capetown AirBnB Data was 201844, 97% of the listings are active while 3% are inactive.
 
+2.The Distinct hosts thatare present in the CapeTown AirBnB listing and the host with the most listings,
 ## Challenges
 
 (discuss the challenges you faced in the project)
