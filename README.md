@@ -1,4 +1,4 @@
-# MumsWhoCodeSQL_project
+## MumsWhoCodeSQL_project
 
 ## Project/Goals
 
@@ -16,8 +16,9 @@ To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,and review 
 ## Results
 (fill in what you discovered the data could tell you  and how you used the data to answer those questions)
 
-Insights
- 
+## Insights
+ From the Analysis carried out,i was able to realised these insigths:
+ 1.percentage of total listing is active or inactive 
 
 ## Challenges
 
