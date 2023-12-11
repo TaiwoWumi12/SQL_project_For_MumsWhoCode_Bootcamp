@@ -2,7 +2,8 @@
 
 ## Project/Goals
 
-AirBnB Listings Analysis with SQL/
+AirBnB Listings Analysis with SQL/To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,and review trends and pattarns in the Dataset.
+
 
 (Fill in your description and goal here)
 To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,and review trends and pattarns in the Dataset.
