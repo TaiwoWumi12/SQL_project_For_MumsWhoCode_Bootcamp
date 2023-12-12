@@ -152,7 +152,33 @@ Answer: "correlation"
 
 Question 5: How do individual listings or hosts perform compared to the average or top-performing ones in terms of ratings, pricing, and booking frequency?
 
-SQL Queries:
+SQL Queries:SELECT round(AVG(review_score_rating),2) AS average_rating
+FROM listings;
+
+-- Ratings for individual listings compared to the average
+SELECT id, review_score_rating,
+    CASE
+        WHEN review_score_rating > (SELECT round(AVG(review_score_rating),2) FROM listings) THEN 'Above Average'
+        WHEN review_score_rating < (SELECT round(AVG(review_score_rating),2) FROM listings) THEN 'Below Average'
+        ELSE 'Average'
+    END AS rating_comparison
+FROM listings;
+
+
+
+
+
+-- Pricing for individual listings compared to the average
+SELECT id, price,
+    CASE
+        WHEN cast(replace(replace(price,'$', ''), ',', '') as decimal) > (SELECT avg(cast(replace(replace(price,'$', ''), ',', '') as decimal)) from listings) THEN 'Above Average'
+        WHEN cast(replace(replace(price,'$', ''), ',', '') as decimal) < (SELECT avg(cast(replace(replace(price,'$', ''), ',', '') as decimal)) FROM listings) THEN 'Below Average'
+        ELSE 'Average'
+    END AS price_comparison
+FROM listings;
+
+
+
 
 Answer:
 
