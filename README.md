@@ -18,7 +18,7 @@ To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,and review 
 (fill in what you discovered the data could tell you  and how you used the data to answer those questions)
 
 ## Insights
- From the Analysis carried out,i was able to realised these insigths:
+ From the Analysis carried out,we were able to realised these insigths:
 
  1. The total listings in the Capetown AirBnB data and percentage of total listing that is active and inactive,the total listings in the Capetown AirBnB Data was 201844, 97% of the listings are active while 3% are inactive.
 
@@ -26,8 +26,8 @@ To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,and review 
 ## Challenges
 
 (discuss the challenges you faced in the project)
-I have challenges in importing the Data.
-No Access to Data Card.
+we have challenges in importing the Data.
+we have no Access to Data Card.
 ## Future Goals
 
 (What would you do if you had more time?)
