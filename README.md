@@ -1,12 +1,11 @@
 ## MumsWhoCodeSQL_project
 
-## Project/Goals
+  ## PROJECT
+                                  
+ ## CAPETOWN AIRBnB LISTINGS ANALYSIS WITH SQL
 
-AirBnB Listings Analysis with SQL/To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,and review trends and pattarns in the Dataset.
-
-
-(Fill in your description and goal here)
-To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,and review trends and pattarns in the Dataset.
+## GOALS:
+To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,review trends and pattarns in the Dataset.
 
 ## Process
 
@@ -14,20 +13,27 @@ To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,and review 
 ( Step 2: Data Cleaning)
 ( Step 3: Data Exploration And Analysis)
 
-## Results
-(fill in what you discovered the data could tell you  and how you used the data to answer those questions)
+## INSIGHTS
+ From the Analysis carried out,we were able to realised the following insigths:
 
-## Insights
- From the Analysis carried out,we were able to realised these insigths:
+ 1. Based on availability of listings,97% of the listing are Active while 3% are inactive.The total count of host is 5980.
 
- 1. The total listings in the Capetown AirBnB data and percentage of total listing that is active and inactive,the total listings in the Capetown AirBnB Data was 201844, 97% of the listings are active while 3% are inactive.
+2.  Nox with Id 57218252 has the highest number of listing (115).
 
-2.The Distinct hosts that are present in the CapeTown AirBnB listing and the host with the most listings,
+3.  4350 listings are available for more than 90 days a year while 1198 listings are available for less than 30 days a year.
+
+4.  24% of the listing offers instant booking.
+
+5.  There are 53 different property type with "entire rental unit" has the most available property type.
+
+6.  "Entire home" property type has the highest average price while private room in cottage has the lowest average price.
+
+7.  There is a very low correlation between price and review which means than review are not based on prices of properties.
+
 ## Challenges
-
-(discuss the challenges you faced in the project)
-we have challenges in importing the Data.
-we have no Access to Data Card.
+ we have challenges in importing the Data.
+ we have no Access to Data Dictionary.
+ 
 ## Future Goals
 
-(What would you do if you had more time?)
+we would have Explored more.
