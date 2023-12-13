@@ -45,7 +45,7 @@ we would have Explored more.
 
   TEAM C
         
-Omowunmi Taiwo Ogundepo,
+Hotonu Omowunmi Taiwo,
 Oluwafunmilayo Oladeinde,
 Grace Omachi,
 Henrrietta Offiong,
