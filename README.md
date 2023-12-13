@@ -41,15 +41,15 @@ To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,review tren
 we would have Explored more.
 
 
-## PACKAGES:
+## PACKAGE:
 
   TEAM C
         
-Omowunmi Taiwo Ogundepo
-Oluwafunmilayo Oladeinde
-Grace Omachi
-Henrrietta Offiong
-Hirwa Fabienne
-Feyisayo Okutoro
-Habeeba
+Omowunmi Taiwo Ogundepo,
+Oluwafunmilayo Oladeinde,
+Grace Omachi,
+Henrrietta Offiong,
+Hirwa Fabienne,
+Feyisayo Okutoro,
+Habeeba.
 
