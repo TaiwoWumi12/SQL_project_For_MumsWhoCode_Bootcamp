@@ -25,7 +25,7 @@ SQL Queries: SELECT COUNT (distinct host_id)
 FROM listings
 Answer: 5980 Distinct host are present in the CapeTown AirBnB listings.
 
-## listings each of the distinct hosts.  
+# listings each of the distinct hosts.  
 SQL Queries: SELECT host_id, COUNT(host_id) AS number_of_listing
 FROM listings
 GROUP BY host_id
@@ -44,7 +44,7 @@ WHERE CASE (availability_365 as integer) > 90
 
 Answer: 4350 is the total number of listings available for more than 90 days a year.
 
-## Listings with availability for less than 30 days a year 
+# Listings with availability for less than 30 days a year 
 SQL Queries: SELECT COUNT (distinct host_id)
 FROM listings
 WHERE CASE (availability_365 as integer) < 30
