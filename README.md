@@ -48,7 +48,7 @@ we would have Explored more.
 Hotonu Omowunmi Taiwo,
 Oluwafunmilayo Oladeinde,
 Grace Omachi,
-Henrrietta Offiong,
+Henrrietta Emediong Offiong,
 Hirwa Fabienne,
 Feyisayo Okutoro,
 Habeeba.
