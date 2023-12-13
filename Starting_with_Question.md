@@ -6,38 +6,25 @@ SQL Queries: SELECT SUM(host_total_listings_count)
 FROM listings
 
 Answer:! 201844 Listings are in the Capetown AirBnB Data.
--- There are inactive listings in the data.
 SQL Queries: SELECT *
 FROM listing
 WHERE has_availability = 'false'      
---Yes, 269 listings are not active considering that they are not available.
+--269 listings are not active considering that they are not available.
 If yes,
 SQL Queries: SELECT (COUNT(CASE WHEN has_availability = 'true' THEN 1 end) * 100 / COUNT(*)) as percentage_true
 FROM listings
---97%  of the listings are active while 3% are inactive.
+--97% of the listings are active while 3% are inactive.
 
 
 Question 2: How many distinct hosts are present in the CapeTown AirBnB listing? How many listings does each of this distinct hosts have? Which host have the most listings
 
-SQL Queries:
-#How many distinct hosts are present in the CapeTown AirBnB listing? 
-SELECT COUNT (distinct host_id)
+# Distinct hosts present in the CapeTown AirBnB listing 
+SQL Queries: SELECT COUNT (distinct host_id)
 FROM listings
-
 Answer: 5980 Distinct host are present in the CapeTown AirBnB listings.
 
-SQL Queries:
---How many listings does each of this distinct hosts have? 
-SELECT host_id, COUNT(host_id) AS number_of_listing
-FROM listings
-GROUP BY host_id
-ORDER BY number_of_listing DESC
-
-Answer:
-
-SQL Queries
---How many listings does each of this distinct hosts have? 
-SELECT host_id, COUNT(host_id) AS number_of_listing
+## listings each of the distinct hosts.  
+SQL Queries: SELECT host_id, COUNT(host_id) AS number_of_listing
 FROM listings
 GROUP BY host_id
 ORDER BY number_of_listing DESC
@@ -55,15 +42,15 @@ WHERE CASE (availability_365 as integer) > 90
 
 Answer: 4350 is the total number of listings available for more than 90 days a year.
 
-SQL Queries: -- Listings have availability for less than 30 days a year 
-SELECT COUNT (distinct host_id)
+## Listings with availability for less than 30 days a year 
+SQL Queries: SELECT COUNT (distinct host_id)
 FROM listings
 WHERE CASE (availability_365 as integer) < 30
 
 Answer:1198 Listings has availability for less than 30 days a year.
+# percentage of listings that are available for instant booking.
 
-SQL Queries: --What percentage of listings are available for instant booking?
-SELECT (COUNT(CASE WHEN instant_bookable = 'true' THEN 1 END) * 100 / COUNT(*)) AS percentage_true
+SQL Queries: SELECT (COUNT(CASE WHEN instant_bookable = 'true' THEN 1 END) * 100 / COUNT(*)) AS percentage_true
 FROM listings
 
 Answer: 24 Percentage of listings are available for instant booking.
@@ -71,8 +58,8 @@ Answer: 24 Percentage of listings are available for instant booking.
 
 Question 4: What are the different types of properties available and their counts? Which property type has the highest average price? Write a query to show the correlation between review and pricing.
 
-SQL Queries: --What percentage of listings are available for instant booking?
-SELECT (COUNT(CASE WHEN instant_bookable = 'true' THEN 1 END) * 100 / COUNT(*)) AS percentage_true
+ # percentage of listings are available for instant booking.
+SQL Queries: SELECT (COUNT(CASE WHEN instant_bookable = 'true' THEN 1 END) * 100 / COUNT(*)) AS percentage_true
 FROM listings
 
 Answer: "property_type"	      "COUNT"
@@ -130,9 +117,8 @@ Answer: "property_type"	      "COUNT"
 "Room in bed and breakfast"	30
 "Private room in villa"	10
 
-SQL Queries:
---The property type that has the highest average price
-SELECT property_type, SUM(CASE(REPLACE(REPLACE(price,'$', ''), ',', '') AS DECIMAL)) AS total_price
+# The property type that has the highest average price
+SQL Queries: SELECT property_type, SUM(CASE(REPLACE(REPLACE(price,'$', ''), ',', '') AS DECIMAL)) AS total_price
 FROM listings
 GROUP BY property_type
 ORDER BY total_price DESC
@@ -142,8 +128,8 @@ Answer:
 "property_type"	  "total_price"
 "Entire home"    	10862254.00
 
-SQL Queries: --Write a query to show the correlation between review and pricing.
-SELEC CORR(review_score_rating, CASE(REPLACE(REPLACE(price,'$', ''), ',', '') AS DECIMAL)) AS correlation
+# Query show the correlation between review and pricing.
+SQL Queries: SELEC CORR(review_score_rating, CASE(REPLACE(REPLACE(price,'$', ''), ',', '') AS DECIMAL)) AS correlation
 FROM listings
 
 Answer: "correlation"
@@ -155,21 +141,17 @@ Question 5: How do individual listings or hosts perform compared to the average 
 SQL Queries:SELECT round(AVG(review_score_rating),2) AS average_rating
 FROM listings;
 
--- Ratings for individual listings compared to the average
+# Ratings for individual listings compared to the average
 SELECT id, review_score_rating,
     CASE
         WHEN review_score_rating > (SELECT round(AVG(review_score_rating),2) FROM listings) THEN 'Above Average'
         WHEN review_score_rating < (SELECT round(AVG(review_score_rating),2) FROM listings) THEN 'Below Average'
         ELSE 'Average'
     END AS rating_comparison
-FROM listings;
+FROM listings.
 
-
-
-
-
--- Pricing for individual listings compared to the average
-SELECT id, price,
+# Pricing for individual listings compared to the average
+SQL Queries: SELECT id, price,
     CASE
         WHEN cast(replace(replace(price,'$', ''), ',', '') as decimal) > (SELECT avg(cast(replace(replace(price,'$', ''), ',', '') as decimal)) from listings) THEN 'Above Average'
         WHEN cast(replace(replace(price,'$', ''), ',', '') as decimal) < (SELECT avg(cast(replace(replace(price,'$', ''), ',', '') as decimal)) FROM listings) THEN 'Below Average'
