@@ -2,6 +2,8 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 Question 1: How many total listings are there in the Capetown AirBnB data? Would you say there are inactive listings in the data? If yes, What percentage of total listing is active or inactive?
 
+
+# Total listings in Capetown AirBnB
 SQL Queries: SELECT SUM(host_total_listings_count)
 FROM listings
 
