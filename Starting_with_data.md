@@ -1,3 +1,5 @@
+# 5 Questions and Answers From The Database
+
 Question 1: Which host has the average most expensive price?
 
 SQL Queries: 
@@ -16,9 +18,7 @@ FROM listings
 GROUP by room_type
 LIMIT 1
 
-
 Answer:"Entire home/apt"	9695
-
 
 Question 3: How Many Listings can be Instantly Booked?
 
@@ -29,7 +29,6 @@ WHERE instant_bookable = 'true'
 Answer:2441
 
 Question 4:Is there any correlation between price and number of bedrooms? 
-
 
 SQL Queries:SELECT CORR(bedrooms, CAST(REPLACE(replace(price,'$', ''), ',', '') as DECIMAL)) as correlation
 FROM listings
