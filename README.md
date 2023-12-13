@@ -1,6 +1,8 @@
-## MumsWhoCodeSQL_project
 
-  ## PROJECT
+
+## MumsWhoCodeSQL_project 
+
+  ## PROJECT       
                                   
  ## CAPETOWN AIRBnB LISTINGS ANALYSIS WITH SQL
 
@@ -18,7 +20,7 @@ To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,review tren
 
  1. Based on availability of listings,97% of the listing are Active while 3% are inactive.The total count of host is 5980.
 
-2.  Nox with Id 57218252 has the highest number of listing (115).
+2.  Host with Id 57218252 has the highest number of listing (115).
 
 3.  4350 listings are available for more than 90 days a year while 1198 listings are available for less than 30 days a year.
 
@@ -37,3 +39,17 @@ To Analyse Capetown AirBnB Lisings Dataset in order to gain insights,review tren
 ## Future Goals
 
 we would have Explored more.
+
+
+## PACKAGES:
+
+  TEAM C
+        
+Omowunmi Taiwo Ogundepo
+Oluwafunmilayo Oladeinde
+Grace Omachi
+Henrrietta Offiong
+Hirwa Fabienne
+Feyisayo Okutoro
+Habeeba
+
