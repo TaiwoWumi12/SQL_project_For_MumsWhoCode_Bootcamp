@@ -1,5 +1,4 @@
-This Queries was used to show the description of table.
-
+# This Queries was used to show the description of table.
 
 SELECT 
    table_name, 
@@ -12,7 +11,7 @@ WHERE
 
 
 
-   This Queries was used to delect rows with missing values.
+  # This Queries was used to delect rows with missing values.
 
 DELETE FROM listings
 where id is null 
